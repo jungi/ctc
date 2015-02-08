@@ -8,6 +8,7 @@ public class Problem2 {
 	 * regardless, here it goes..
 	 */
 	public static String reverseString(String s) {
+		
 		StringBuffer returnString = new StringBuffer();
 		for (int i = s.length() - 1; i >= 0; i--) {
 			returnString.append(s.charAt(i));
