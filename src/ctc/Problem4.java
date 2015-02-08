@@ -1,7 +1,5 @@
 package ctc;
 
-import java.util.ArrayList;
-
 public class Problem4 {
 
 	public static String replaceSpaces(char[] input, int k) {
@@ -35,6 +33,7 @@ public class Problem4 {
 			returnString.append(input[i]);
 		}
 		System.out.println(returnString.toString());
+		
 		return returnString.toString();
 		
 	}
