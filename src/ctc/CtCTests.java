@@ -40,9 +40,19 @@ public class CtCTests {
 		assertTrue(Problem3.checkPermutation("redrum", "murder"));
 	}
 	@Test
-	public void Problem3Test2() {
-		// the shining.. 
+	public void Problem3Test2() { 
 		assertFalse(Problem3.checkPermutation("notpermu", "tation"));
 	}
+	
+	// problem 4:
+	// replace all apces with '%20'
+	@Test
+	public void Problem4Test1() {
+		char[] inputJohnSmith = {'M', 'r', ' ', 'J', 'o', 'h','n', ' ', 'S',
+				'm', 'i', 't', 'h', ' ', ' ', ' ', ' '};
+		assertTrue(Problem4.replaceSpaces(inputJohnSmith, 13)
+				.equals("Mr%20John%20Smith"));
+	}
+	
 
 }
