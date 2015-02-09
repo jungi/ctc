@@ -54,5 +54,15 @@ public class CtCTests {
 				.equals("Mr%20John%20Smith"));
 	}
 	
-
+	// problem 5:
+	// basic string compression	
+	@Test
+	public void Problem5Test1() { 
+		assertTrue(Problem5.compressString("aabccccca").equals("a2b1c5a1"));
+	}
+	@Test
+	public void Problem5Test2() { 
+		assertTrue(Problem5.compressString("abcd").equals("abcd"));
+	}
+	
 }

@@ -32,7 +32,6 @@ public class Problem4 {
 		for (int i = 0; i < input.length; i++) {
 			returnString.append(input[i]);
 		}
-		System.out.println(returnString.toString());
 		
 		return returnString.toString();
 		
