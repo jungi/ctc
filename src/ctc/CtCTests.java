@@ -93,7 +93,15 @@ public class CtCTests {
 		}
 	}
 	
-	
+	// problem 8:
+	// given strings s1 and s2, check if s2 is rotation of s1
+	// using only one call to isSubstring
+	@Test
+	public void Problem8Test1() {
+		String t1 = "waterbottle";
+		String t2 = "erbottlewat";
+		assertTrue(Problem8.isRotation(t1, t2));
+	}
 	
 	
 	
