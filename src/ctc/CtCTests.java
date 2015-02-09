@@ -2,6 +2,8 @@ package ctc;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class CtCTests {
@@ -64,5 +66,37 @@ public class CtCTests {
 	public void Problem5Test2() { 
 		assertTrue(Problem5.compressString("abcd").equals("abcd"));
 	}
+	
+	// problem 7:
+	// if an element in MxN matrix is 0, set its row/col to 0
+	@Test
+	public void Problem7Test1() {
+		int[][] testArray = {
+				{1, 1, 1, 1, 1},
+				{1, 1, 1, 1, 1},
+				{1, 1, 0, 1, 1},
+				{1, 1, 1, 1, 1},
+				{0, 1, 1, 0, 1}
+		};
+		int[][] resultArray = {
+				{0, 1, 0, 0, 1},
+				{0, 1, 0, 0, 1},
+				{0, 0, 0, 0, 0},
+				{0, 1, 0, 0, 1},
+				{0, 0, 0, 0, 0},
+		};
+		int[][] tmpArray = Problem7.setZeroes(testArray);
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				assertTrue(tmpArray[i][j] == resultArray[i][j]);
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
 	
 }
