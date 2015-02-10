@@ -3,7 +3,7 @@ package ctc;
 import java.util.HashMap;
 import java.util.Map;
 
-// Check if a string has all unique char
+// Check if a string has all unique characters
 public class Problem1 {
 	
 	public static boolean checkUnique(String s){
