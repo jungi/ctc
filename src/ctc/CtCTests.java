@@ -3,6 +3,8 @@ package ctc;
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import org.junit.Test;
 
@@ -103,7 +105,38 @@ public class CtCTests {
 		assertTrue(Problem8.isRotation(t1, t2));
 	}
 	
-	
+	// ch2 pr1:
+	// remove duplicates from an unsorted linked list
+	@Test
+	public void Ch2Pr1Test1() {
+		LinkedList<String> testList = new LinkedList<String>();
+		LinkedList<String> resultList = new LinkedList<String>();
+		testList.add("F");
+		testList.add("O");
+		testList.add("L");
+		testList.add("L");
+		testList.add("O");
+		testList.add("W");
+		testList.add(" ");
+		testList.add("U");
+		testList.add("P");
+		
+		resultList.add("F");
+		resultList.add("O");
+		resultList.add("L");
+		resultList.add("W");
+		resultList.add(" ");
+		resultList.add("U");
+		resultList.add("P");
+		
+		Iterator it1 = Ch2Pr1.removeDuplicates(testList).iterator();
+		Iterator it2 = resultList.iterator();
+		
+		while (it1.hasNext()) {
+			assertEquals(it1.next(), it2.next());
+		}
+		
+	}
 	
 	
 	
