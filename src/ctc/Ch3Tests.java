@@ -2,6 +2,9 @@ package ctc;
 
 import static org.junit.Assert.*;
 
+import java.util.HashSet;
+import java.util.Random;
+
 import org.junit.Test;
 
 public class Ch3Tests {
@@ -110,5 +113,31 @@ public class Ch3Tests {
 		}
 	}
 	
+	// Ch3 Pr6 :
+	// sort a stack using one other stack
+	@Test
+	public void Ch3Pr6Test() {
+		Ch3Pr1Stack stack = new Ch3Pr1Stack();
+		
+		//Set up stack randomly
+		HashSet<Integer> set = new HashSet<Integer>();
+		for (int i = 1; i < 11; i++) {
+			set.add(i);
+		}
+		while (!set.isEmpty()) {
+			Random rn = new Random();
+			int i = rn.nextInt(10) + 1;
+			if (set.contains(i)) {
+				set.remove(i);
+				stack.push(i);
+			}
+		}
+	
+		stack = Ch3Pr6.sortStack(stack);
+
+		for (int i = 10; i > 0; i--) {
+			assertEquals(i, stack.pop());
+		}
+	}
 	
 }

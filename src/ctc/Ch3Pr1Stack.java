@@ -5,7 +5,7 @@ public class Ch3Pr1Stack {
 	Integer topOfStack;
 	
 	public Ch3Pr1Stack() {
-		stack = new int[10];
+		stack = new int[50];
 	}
 	
 	public void resize(int k) {
