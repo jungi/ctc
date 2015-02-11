@@ -4,6 +4,7 @@ public class Ch4Pr1 {
 
 	public static boolean isBalanced(BSTNode node) {
 		if (node != null) {
+
 			return isBalanced(node.left) && isBalanced(node.right) &&
 					Math.abs(checkHeight(node.left) - checkHeight(node.right))
 					<= 1;

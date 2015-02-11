@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class Ch4Tests {
 	
-	@Test
+	//@Test
 	public void Ch4Pr1Test1() {
 		//initialize bst tree (this is balanced)
 		BSTNode node = new BSTNode(5);
@@ -30,22 +30,28 @@ public class Ch4Tests {
 		
 		assertTrue(Ch4Pr1.isBalanced(node));
 	}
-
+	
+	// Ch4 Pr2
+	// check for path
 	@Test
-	public void Ch4Pr1Test2() {
-		//initialize bst tree (this is balanced)
-		BSTNode node5 = new BSTNode(5);
-		BSTNode node4 = new BSTNode(4);
-		BSTNode node3 = new BSTNode(3);
-		BSTNode node2 = new BSTNode(2);
-		BSTNode node1 = new BSTNode(1);
+	public void Ch4Pr2Test() {
+		Ch4Pr2Graph graph = new Ch4Pr2Graph();
+		Ch4Pr2Node n1 = new Ch4Pr2Node();
+		Ch4Pr2Node n2 = new Ch4Pr2Node();
+		Ch4Pr2Node n3 = new Ch4Pr2Node();
+		Ch4Pr2Node n4 = new Ch4Pr2Node();
+		Ch4Pr2Node n5 = new Ch4Pr2Node();
+		Ch4Pr2Node n6 = new Ch4Pr2Node();
+		n1.addNeighbor(n2);
+		n1.addNeighbor(n4);
+		n2.addNeighbor(n5);
+		n5.addNeighbor(n1);
+		n6.addNeighbor(n3);
+		n4.addNeighbor(n3);
+		n3.addNeighbor(n4);
 		
-		node1.right = node2;
-		node2.right = node3;
-		node3.right = node4;
-		node4.right = node5;
-		
-		assertFalse(Ch4Pr1.isBalanced(node1));
-	}
+		assertFalse(Ch4Pr2.checkPath(n1, n6));
+		assertTrue(Ch4Pr2.checkPath(n1, n3));
 
+	}
 }
