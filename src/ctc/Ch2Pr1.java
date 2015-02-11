@@ -9,7 +9,7 @@ public class Ch2Pr1 {
 		LinkedList<String> returnString = new LinkedList<String>();
 		HashSet<String> count = new HashSet<String>();
 		
-		Iterator it = ll.iterator();
+		Iterator<String> it = ll.iterator();
 		
 		while (it.hasNext()) {
 			String s = (String) it.next();

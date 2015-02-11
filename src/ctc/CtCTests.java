@@ -129,12 +129,39 @@ public class CtCTests {
 		resultList.add("U");
 		resultList.add("P");
 		
-		Iterator it1 = Ch2Pr1.removeDuplicates(testList).iterator();
-		Iterator it2 = resultList.iterator();
+		Iterator<String> it1 = Ch2Pr1.removeDuplicates(testList).iterator();
+		Iterator<String> it2 = resultList.iterator();
 		
 		while (it1.hasNext()) {
 			assertEquals(it1.next(), it2.next());
 		}
+	
+		
+		
+	}
+	
+	// ch2 pr2:
+	// implement an algorithm to find the kth to last element of a linked list
+	@Test
+	public void Ch2Pr2Test2() {
+		LinkedList<Integer> testList = new LinkedList<Integer>();
+		LinkedList<Integer> resultList = new LinkedList<Integer>();
+		testList.add(1);
+		testList.add(2);
+		testList.add(3);
+		testList.add(4);
+		testList.add(5);
+		testList.add(6);
+		testList.add(7);
+		testList.add(8);
+		testList.add(9);
+		testList.add(10);
+		
+		assertEquals(Ch2Pr2.findKthLast(testList, 4), 7);
+		assertEquals(Ch2Pr2.findKthLast(testList, 5), 6);
+		assertEquals(Ch2Pr2.findKthLast(testList, 3), 8);
+		assertEquals(Ch2Pr2.findKthLast(testList, 2), 9);
+
 		
 	}
 	
