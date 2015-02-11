@@ -1,8 +1,14 @@
 package ctc;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.HashMap;
 
 import org.junit.Test;
+
+import java.util.Queue;
 
 public class Ch4Tests {
 	
@@ -73,5 +79,38 @@ public class Ch4Tests {
 		assertEquals(n.right.left.data, 4);
 		assertEquals(n.right.right.data, 6);
 
+	}
+
+	// Ch4 Pr4
+	// make a linked list for each level of a bst
+	@Test
+	public void Ch4Pr4Test() {
+		BSTNode node1 = new BSTNode(1);
+		BSTNode node2 = new BSTNode(2);
+		BSTNode node3 = new BSTNode(3);
+		BSTNode node4 = new BSTNode(4);
+		BSTNode node5 = new BSTNode(5);
+		BSTNode node6 = new BSTNode(6);
+		BSTNode node7 = new BSTNode(7);
+		
+		// node4 is the root
+		node4.left = node2;
+		node4.right = node6;
+		node2.left = node1;
+		node2.right = node3;
+		node6.left = node5;
+		node6.right = node7;
+		
+		HashMap<Integer, Queue<BSTNode>> lists = new HashMap<Integer,
+				Queue<BSTNode>>();
+		Ch4Pr4.makeLists(node4, lists);
+		assertEquals(node4, lists.get(0).poll());
+		assertEquals(node2, lists.get(1).poll());
+		assertEquals(node6, lists.get(1).poll());
+		assertEquals(node1, lists.get(2).poll());
+		assertEquals(node3, lists.get(2).poll());
+		assertEquals(node5, lists.get(2).poll());
+		assertEquals(node7, lists.get(2).poll());
+		
 	}
 }
