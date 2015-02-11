@@ -55,7 +55,7 @@ public class CtCTests {
 	// problem 4:
 	// replace all apces with '%20'
 	@Test
-	public void Problem4Test1() {
+	public void Problem4Test() {
 		char[] inputJohnSmith = {'M', 'r', ' ', 'J', 'o', 'h','n', ' ', 'S',
 				'm', 'i', 't', 'h', ' ', ' ', ' ', ' '};
 		assertTrue(Problem4.replaceSpaces(inputJohnSmith, 13)
@@ -76,7 +76,7 @@ public class CtCTests {
 	// problem 7:
 	// if an element in MxN matrix is 0, set its row/col to 0
 	@Test
-	public void Problem7Test1() {
+	public void Problem7Test() {
 		int[][] testArray = {
 				{1, 1, 1, 1, 1},
 				{1, 1, 1, 1, 1},
@@ -103,7 +103,7 @@ public class CtCTests {
 	// given strings s1 and s2, check if s2 is rotation of s1
 	// using only one call to isSubstring
 	@Test
-	public void Problem8Test1() {
+	public void Problem8Test() {
 		String t1 = "waterbottle";
 		String t2 = "erbottlewat";
 		assertTrue(Problem8.isRotation(t1, t2));
@@ -112,7 +112,7 @@ public class CtCTests {
 	// ch2 pr1:
 	// remove duplicates from an unsorted linked list
 	@Test
-	public void Ch2Pr1Test1() {
+	public void Ch2Pr1Test() {
 		LinkedList<String> testList = new LinkedList<String>();
 		LinkedList<String> resultList = new LinkedList<String>();
 		testList.add("F");
@@ -147,7 +147,7 @@ public class CtCTests {
 	// ch2 pr2:
 	// implement an algorithm to find the kth to last element of a linked list
 	@Test
-	public void Ch2Pr2Test1() {
+	public void Ch2Pr2Test() {
 		LinkedList<Integer> testList = new LinkedList<Integer>();
 		LinkedList<Integer> resultList = new LinkedList<Integer>();
 		testList.add(1);
@@ -170,20 +170,15 @@ public class CtCTests {
 	// ch2 pr3:
 	// delete a node in a singly linked list with only access to that node
 	@Test
-	public void Ch2Pr3Test1() {
-		LinkedList<Ch2Node> testList = new LinkedList<Ch2Node>();
+	public void Ch2Pr3Test() {
 		Ch2Node ptr7 = new Ch2Node(7, null);
 		Ch2Node ptr6 = new Ch2Node(6, ptr7);
 		Ch2Node ptr5 = new Ch2Node(5, ptr6);
 		Ch2Node ptr4 = new Ch2Node(4, ptr5);
-		
-		testList.add(ptr4);
-		testList.add(ptr5);
-		testList.add(ptr6);
-		testList.add(ptr7);
+
 		
 		
-		Ch2Pr3.removeAt(testList, ptr5);
+		Ch2Pr3.removeAt(ptr5);
 		
 		Ch2Node checker = ptr4;
 	
@@ -191,10 +186,61 @@ public class CtCTests {
 		assertEquals(checker.next.data, 6);
 		checker = checker.next;
 		assertEquals(checker.next.data, 7);
-
 	}
 	
-	//
+	// ch2 pr4:
+	// partition a linked list around a value x
+	@Test
+	public void Ch2Pr4Test() {
+		//3->4->5->2->6->1->7->0
+		Ch2Node ptr0 = new Ch2Node(0, null);
+		Ch2Node ptr7 = new Ch2Node(7, ptr0);
+		Ch2Node ptr1 = new Ch2Node(1, ptr7);
+		Ch2Node ptr6 = new Ch2Node(6, ptr1);
+		Ch2Node ptr2 = new Ch2Node(2, ptr6);
+		Ch2Node ptr5 = new Ch2Node(5, ptr2);
+		Ch2Node ptr4 = new Ch2Node(4, ptr5);
+		Ch2Node ptr3 = new Ch2Node(3, ptr4);
+		
+		Ch2Node result = Ch2Pr4.partition(ptr3, 2);
+		
+		int[] arr = new int[8];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = 1;
+		}
+		
+		
+		arr[result.data]--;
+		result = result.next;
+		arr[result.data]--;
+		result = result.next;
+		
+		assertEquals(arr[0], 0);
+		assertEquals(arr[1], 0);
+		
+		arr[result.data]--;
+		result = result.next;
+		assertEquals(arr[2], 0);
+		
+		arr[result.data]--;
+		result = result.next;
+		arr[result.data]--;
+		result = result.next;
+		arr[result.data]--;
+		result = result.next;
+		arr[result.data]--;
+		result = result.next;
+		arr[result.data]--;
+		result = result.next;
+		assertEquals(arr[3], 0);
+		assertEquals(arr[4], 0);
+		assertEquals(arr[5], 0);
+		assertEquals(arr[6], 0);
+		assertEquals(arr[7], 0);
+
+		
+		
+	}
 	
 	
 }
