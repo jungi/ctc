@@ -19,5 +19,26 @@ public class Ch3Tests {
 		//returns -1 when empty
 		assertEquals(-1, stack.pop());
 	}
+	
+	@Test
+	public void Ch3Pr2Test() {
+		Ch3Pr2Stack stack = new Ch3Pr2Stack();
+		stack.push(4);
+		stack.push(2);
+		stack.push(6);
+		stack.push(2);
+		stack.push(7);
+		stack.push(1);
+		stack.push(1);
+		stack.push(5);
+
+		assertEquals(1, stack.min());
+		stack.pop();
+		stack.pop();
+		assertEquals(1, stack.min());
+		stack.pop();
+		assertEquals(2, stack.min());
+
+	}
 
 }

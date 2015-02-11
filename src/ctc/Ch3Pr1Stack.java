@@ -31,7 +31,12 @@ public class Ch3Pr1Stack {
 	}
 	
 	public int peek() {
+		if (topOfStack != null) { 
 		return stack[topOfStack];
+		}
+		else {
+			return -1;
+		}
 	}
 	
 	// return -1 when empty
