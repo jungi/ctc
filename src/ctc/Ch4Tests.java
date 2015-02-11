@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class Ch4Tests {
 	
-	//@Test
+	@Test
 	public void Ch4Pr1Test1() {
 		//initialize bst tree (this is balanced)
 		BSTNode node = new BSTNode(5);
@@ -52,6 +52,26 @@ public class Ch4Tests {
 		
 		assertFalse(Ch4Pr2.checkPath(n1, n6));
 		assertTrue(Ch4Pr2.checkPath(n1, n3));
+	}
+	
+	// Ch4 Pr3
+	// sorted array -> bst 
+	@Test
+	public void Ch4Pr3Test() {
+		int[] arr = new int[7];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = i;
+		}
+		
+		BSTNode n = Ch4Pr3.makeBST(arr);
+		
+		assertEquals(n.data, 3);
+		assertEquals(n.left.data, 1);
+		assertEquals(n.left.left.data, 0);
+		assertEquals(n.left.right.data, 2);
+		assertEquals(n.right.data, 5);
+		assertEquals(n.right.left.data, 4);
+		assertEquals(n.right.right.data, 6);
 
 	}
 }
