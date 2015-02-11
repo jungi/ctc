@@ -78,5 +78,37 @@ public class Ch3Tests {
 		}
 	}
 	
+	// Ch3 Pr5 :
+	// implement a queue using two stacks
+	@Test
+	public void Ch3Pr5Test1() {
+		Ch3Pr5Queue q = new Ch3Pr5Queue();
+		for (int i = 1; i <= 100; i++) {
+			q.offer(i);
+		}
+		for (int i = 1; i <= 100; i++) {
+			assertEquals(i, q.poll());
+		}
+	}
+	
+	// Ch3 Pr5 :
+	// implement a queue using two stacks
+	@Test
+	public void Ch3Pr5Test2() {
+		Ch3Pr5Queue q = new Ch3Pr5Queue();
+		for (int i = 1; i <= 50; i++) {
+			q.offer(i);
+		}
+		for (int i = 1; i <= 25; i++) {
+			assertEquals(i, q.poll());
+		}
+		for (int i = 51; i <= 100; i++) {
+			q.offer(i);
+		}
+		for (int i = 26; i <= 100; i++) {
+			assertEquals(i, q.poll());
+		}
+	}
+	
 	
 }
