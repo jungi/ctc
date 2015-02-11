@@ -8,6 +8,10 @@ import java.util.LinkedList;
 
 import org.junit.Test;
 
+import com.sun.corba.se.impl.orbutil.graph.Node;
+
+
+
 public class CtCTests {
 
 	// problem 1: 
@@ -143,7 +147,7 @@ public class CtCTests {
 	// ch2 pr2:
 	// implement an algorithm to find the kth to last element of a linked list
 	@Test
-	public void Ch2Pr2Test2() {
+	public void Ch2Pr2Test1() {
 		LinkedList<Integer> testList = new LinkedList<Integer>();
 		LinkedList<Integer> resultList = new LinkedList<Integer>();
 		testList.add(1);
@@ -160,9 +164,33 @@ public class CtCTests {
 		assertEquals(Ch2Pr2.findKthLast(testList, 4), 7);
 		assertEquals(Ch2Pr2.findKthLast(testList, 5), 6);
 		assertEquals(Ch2Pr2.findKthLast(testList, 3), 8);
-		assertEquals(Ch2Pr2.findKthLast(testList, 2), 9);
-
+		assertEquals(Ch2Pr2.findKthLast(testList, 2), 9);	
+	}
+	
+	// ch2 pr3:
+	// delete a node in a singly linked list with only access to that node
+	@Test
+	public void Ch2Pr3Test1() {
+		LinkedList<Ch2Node> testList = new LinkedList<Ch2Node>();
+		Ch2Node ptr7 = new Ch2Node(7, null);
+		Ch2Node ptr6 = new Ch2Node(6, ptr7);
+		Ch2Node ptr5 = new Ch2Node(5, ptr6);
+		Ch2Node ptr4 = new Ch2Node(4, ptr5);
 		
+		testList.add(ptr4);
+		testList.add(ptr5);
+		testList.add(ptr6);
+		testList.add(ptr7);
+		
+		
+		Ch2Pr3.removeAt(testList, ptr5);
+		
+		Iterator<Ch2Node> it = testList.iterator();
+
+		assertEquals(it.next().data, 4);
+		assertEquals(it.next().data, 6);
+		assertEquals(it.next().data, 6);
+		assertEquals(it.next().data, 7);
 	}
 	
 	
