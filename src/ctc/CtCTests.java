@@ -247,9 +247,9 @@ public class CtCTests {
 		Ch2Node ptr3 = new Ch2Node(3, ptr4);
 		Ch2Node ptr2 = new Ch2Node(2, ptr3);
 		Ch2Node ptr1 = new Ch2Node(1, ptr2);
-		ptr5.next = ptr1;
+		ptr5.next = ptr3;
 		
-		assertEquals(ptr1, Ch2Pr6.findLoop(ptr1));
+		assertEquals(ptr3, Ch2Pr6.findLoop(ptr1));
 
 		
 	}
