@@ -41,4 +41,42 @@ public class Ch3Tests {
 
 	}
 
+	
+	// CH3 PR4:
+	// TOWER OF HANOI!!
+	@Test
+	public void Ch3Pr4Test1() {
+		Ch3Pr1Stack stack1 = new Ch3Pr1Stack();
+		Ch3Pr1Stack stack2 = new Ch3Pr1Stack();
+		Ch3Pr1Stack stack3 = new Ch3Pr1Stack();
+		for (int i = 7; i > 0; i--) {
+			stack1.push(i);
+		}
+		
+		Ch3Pr4.towersOfHanoi(stack1, stack2, stack3);
+		
+		for (int i = 1; i < 8; i++) {
+			assertEquals(i, stack3.pop());
+		}
+	}
+	
+	// CH3 PR4:
+	// TOWER OF HANOI!!
+	@Test
+	public void Ch3Pr4Test2() {
+		Ch3Pr1Stack stack1 = new Ch3Pr1Stack();
+		Ch3Pr1Stack stack2 = new Ch3Pr1Stack();
+		Ch3Pr1Stack stack3 = new Ch3Pr1Stack();
+		for (int i = 1000; i > 0; i--) {
+			stack1.push(i);
+		}
+		
+		Ch3Pr4.towersOfHanoi(stack1, stack2, stack3);
+		
+		for (int i = 1; i < 1000; i++) {
+			assertEquals(i, stack3.pop());
+		}
+	}
+	
+	
 }

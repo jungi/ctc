@@ -23,10 +23,12 @@ public class Ch3Pr1Stack {
 		}
 		else {
 			topOfStack++;
-			stack[topOfStack] = k;
-			if (topOfStack == stack.length - 1) {
+
+			if (topOfStack >= stack.length - 1) {
 				resize(topOfStack * 2);
 			}
+			
+			stack[topOfStack] = k;
 		}
 	}
 	
@@ -48,7 +50,7 @@ public class Ch3Pr1Stack {
 			}
 			else {
 				topOfStack--;
-				if (topOfStack == stack.length / 4 && stack.length > 2) {
+				if (topOfStack == stack.length / 4 && stack.length > 4) {
 					resize(stack.length / 2);
 				}
 			}
@@ -57,5 +59,9 @@ public class Ch3Pr1Stack {
 		{
 			return -1;
 		}
+	}
+	
+	public boolean isEmpty() {
+		return topOfStack == null;
 	}
 }
