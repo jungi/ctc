@@ -185,14 +185,16 @@ public class CtCTests {
 		
 		Ch2Pr3.removeAt(testList, ptr5);
 		
-		Iterator<Ch2Node> it = testList.iterator();
+		Ch2Node checker = ptr4;
+	
+		assertEquals(checker.data, 4);
+		assertEquals(checker.next.data, 6);
+		checker = checker.next;
+		assertEquals(checker.next.data, 7);
 
-		assertEquals(it.next().data, 4);
-		assertEquals(it.next().data, 6);
-		assertEquals(it.next().data, 6);
-		assertEquals(it.next().data, 7);
 	}
 	
+	//
 	
 	
 }
